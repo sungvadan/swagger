@@ -1,0 +1,31 @@
+openapi: 3.0.0
+info:
+  title: 'This is a test with swagger API'
+  version: '0.1'
+servers:
+  -
+    url: 'http://localhost:8000'
+    description: 'root of api'
+  -
+    url: 'http://another-endpoint:8000'
+    description: 'root of api'
+paths:
+  '/post/{id}':
+    get:
+      operationId: 'App\Controller\PostController::index'
+      parameters:
+        -
+          name: id
+          in: path
+          description: 'id of article'
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: 'get an article by id'
+          content:
+            application/json:
+              schema:
+                description: 'title of the article'
+                type: string
