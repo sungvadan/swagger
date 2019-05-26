@@ -10,3 +10,4 @@ command pour générer avec swagger-php
 ./vendor/bin/openapi --format yaml --output ./swagger/swagger.yaml ./swagger/swagger.php src
 ```
 
+swagger-ui: l'interface pour visualiser 
