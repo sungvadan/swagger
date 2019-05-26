@@ -35,4 +35,24 @@ class PostController
 
     }
 
+
+    /**
+     * @OA\Get(
+     *     path="/article",
+     *     @OA\Response(
+     *      response="200",
+     *      description="get an article",
+     *      @OA\JsonContent(
+     *          type="array",
+     *          @OA\Items(
+     *              ref="#/components/schemas/Article"
+     *          )
+     *      )
+     *     )
+     * )
+     */
+    public function article()
+    {
+
+    }
 }

@@ -3,9 +3,13 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use OpenApi\Annotations as OA;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ArticleRepository")
+ * @OA\Schema(
+ *
+ * )
  */
 class Article
 {
@@ -13,16 +17,31 @@ class Article
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
+     * @OA\Property(
+     *     type="integer",
+     *     description="id of the article",
+     *     example="1"
+     * )
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @OA\Property(
+     *     type="string",
+     *     description="the title of the article",
+     *     nullable=true
+     * )
      */
     private $title;
 
     /**
      * @ORM\Column(type="text")
+     * @OA\Property(
+     *     type="string",
+     *     description="the title of the article",
+     *     nullable=true
+     * )
      */
     private $content;
 
@@ -33,6 +52,12 @@ class Article
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
+     * @OA\Property(
+     *     type="string",
+     *     description="the title of the article",
+     *     nullable=true,
+     *     format="date-time"
+     * )
      */
     private $createdAt;
 
