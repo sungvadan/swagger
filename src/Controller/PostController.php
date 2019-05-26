@@ -59,6 +59,7 @@ class PostController
     /**
      * @OA\Post(
      *     path="/article",
+     *     security={"bearer"},
      *     @OA\RequestBody(
      *          ref="#/components/requestBodies/createArticle"
      *     ),

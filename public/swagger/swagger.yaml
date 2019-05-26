@@ -54,6 +54,8 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Article'
+      security:
+        - bearer
 components:
   schemas:
     Article:
@@ -91,3 +93,7 @@ components:
               content:
                 type: string
             type: object
+  securitySchemes:
+    bearer:
+      type: apiKey
+      bearerFormat: JWT
