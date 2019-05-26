@@ -41,6 +41,19 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Article'
+    post:
+      operationId: 'App\Controller\PostController::create'
+      requestBody:
+        $ref: '#/components/requestBodies/createArticle'
+      responses:
+        '201':
+          description: 'article is successfully created'
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Article'
 components:
   schemas:
     Article:
@@ -63,3 +76,18 @@ components:
           format: date-time
           nullable: true
       type: object
+  requestBodies:
+    createArticle:
+      required: true
+      content:
+        application/json:
+          schema:
+            required:
+              - title
+              - content
+            properties:
+              title:
+                type: string
+              content:
+                type: string
+            type: object

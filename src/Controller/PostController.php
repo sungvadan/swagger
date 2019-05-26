@@ -55,4 +55,27 @@ class PostController
     {
 
     }
+
+    /**
+     * @OA\Post(
+     *     path="/article",
+     *     @OA\RequestBody(
+     *          ref="#/components/requestBodies/createArticle"
+     *     ),
+     *     @OA\Response(
+     *      response="201",
+     *      description="article is successfully created",
+     *      @OA\JsonContent(
+     *          type="array",
+     *          @OA\Items(
+     *              ref="#/components/schemas/Article"
+     *          )
+     *      )
+     *     )
+     * )
+     */
+    public function create()
+    {
+
+    }
 }
